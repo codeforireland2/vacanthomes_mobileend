@@ -1,2 +1,2 @@
-# vacanthomes_mobileend
-Vacant Homes Mobile End designed using React and a Progress Web App
+# Vacant Homes Mobile UI
+Vacant Homes Mobile UI. Designed using React, Typescript, SASS, & Ant Design. 
