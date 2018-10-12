@@ -1,6 +1,7 @@
 import { Icon, Modal, NavBar } from "antd-mobile";
 import * as React from "react";
 import "./App.css";
+import MapWidget from "./components/MapWidget";
 
 interface IAppState {
   isAboutLaunched: boolean;
@@ -43,6 +44,8 @@ class App extends React.Component<{}, IAppState> {
           Vacant Homes is currently in development by Code for Ireland
           </div>
         </Modal>
+
+          <MapWidget/>
       </div>
     );
   }
