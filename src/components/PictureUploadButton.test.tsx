@@ -4,6 +4,10 @@ import PictureUploadButton from './PictureUploadButton';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-    ReactDOM.render(<PictureUploadButton type={'primary'}> a button</PictureUploadButton>, div);
+
+  function onUpload(event: any) {
+      //
+    }
+  ReactDOM.render(<PictureUploadButton onUpload={onUpload}> a button</PictureUploadButton>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
