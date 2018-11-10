@@ -39,7 +39,7 @@ class PictureUploadButton extends React.Component<IPictureUploadButtonProps, any
 
     public render() {
         return (<Button {...this.buttonProps as ButtonProps}>
-                <input onChange={this.onChange} className={'image-input'} type='file' accept='image/*'/>
+                <input onChange={this.onChange} disabled={this.props.disabled} className={'image-input'} type='file' accept='image/*'/>
                 {
                     this.props.children
                 }
