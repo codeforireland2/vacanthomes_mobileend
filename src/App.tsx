@@ -1,7 +1,9 @@
-import { Icon, Modal, NavBar } from "antd-mobile";
-import * as React from "react";
-import "./App.css";
-import MapWidget from "./components/MapWidget";
+import { Icon, Modal, NavBar } from 'antd-mobile';
+import * as React from 'react';
+import './App.css';
+
+import MapWidget from './components/MapWidget';
+import PictureUploadButton from "./components/PictureUploadButton";
 
 interface IAppState {
   isAboutLaunched: boolean;
@@ -16,17 +18,22 @@ class App extends React.Component<{}, IAppState> {
     }
 
   }
+
+  public onUploadPicture = (files: File[]) => {
+      // uploaded files array available
+  };
+
   public render() {
     return (
-      <div className="App">
+      <div className='App'>
         <NavBar
-          mode="dark"
+          mode='dark'
           rightContent={[
-            <Icon 
-            key="0"
-             type="question-circle" 
-             style={{ marginRight: "16px" }}
-             onClick={this.showAbout} 
+            <Icon
+            key='0'
+             type='question-circle'
+             style={{ marginRight: '16px' }}
+             onClick={this.showAbout}
              />,
           ]}
         >
@@ -37,7 +44,7 @@ class App extends React.Component<{}, IAppState> {
           transparent={true}
           maskClosable={false}
           onClose={this.closeAbout}
-          title="About"
+          title='About'
           footer={[{ text: 'Ok', onPress: () => { this.closeAbout(); } }]}
         >
           <div style={{ height: 50 }}>
@@ -46,6 +53,11 @@ class App extends React.Component<{}, IAppState> {
         </Modal>
 
           <MapWidget/>
+
+          <PictureUploadButton type='primary' onUpload={this.onUploadPicture}>
+              Upload a picture
+          </PictureUploadButton>
+
       </div>
     );
   }
